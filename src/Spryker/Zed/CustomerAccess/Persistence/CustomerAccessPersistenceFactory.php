@@ -19,17 +19,11 @@ use Spryker\Zed\Kernel\Persistence\AbstractPersistenceFactory;
  */
 class CustomerAccessPersistenceFactory extends AbstractPersistenceFactory
 {
-    /**
-     * @return \Orm\Zed\CustomerAccess\Persistence\SpyUnauthenticatedCustomerAccessQuery
-     */
     public function createCustomerAccessQuery(): SpyUnauthenticatedCustomerAccessQuery
     {
         return SpyUnauthenticatedCustomerAccessQuery::create();
     }
 
-    /**
-     * @return \Spryker\Zed\CustomerAccess\Persistence\Propel\Mapper\CustomerAccessMapperInterface
-     */
     public function createCustomerAccessMapper(): CustomerAccessMapperInterface
     {
         return new CustomerAccessMapper();

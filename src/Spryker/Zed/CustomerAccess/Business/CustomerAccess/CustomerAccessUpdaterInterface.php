@@ -11,10 +11,5 @@ use Generated\Shared\Transfer\CustomerAccessTransfer;
 
 interface CustomerAccessUpdaterInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\CustomerAccessTransfer $customerAccessTransfer
-     *
-     * @return \Generated\Shared\Transfer\CustomerAccessTransfer
-     */
     public function updateUnauthenticatedCustomerAccess(CustomerAccessTransfer $customerAccessTransfer): CustomerAccessTransfer;
 }

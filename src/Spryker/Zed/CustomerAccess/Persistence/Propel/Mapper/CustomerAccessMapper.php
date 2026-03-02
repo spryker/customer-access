@@ -14,12 +14,6 @@ use Propel\Runtime\Collection\Collection;
 
 class CustomerAccessMapper implements CustomerAccessMapperInterface
 {
-    /**
-     * @param \Orm\Zed\CustomerAccess\Persistence\SpyUnauthenticatedCustomerAccess $customerAccessEntity
-     * @param \Generated\Shared\Transfer\ContentTypeAccessTransfer $contentTypeAccessTransfer
-     *
-     * @return \Generated\Shared\Transfer\ContentTypeAccessTransfer
-     */
     public function mapCustomerAccessEntityToContentTypeAccessTransfer(
         SpyUnauthenticatedCustomerAccess $customerAccessEntity,
         ContentTypeAccessTransfer $contentTypeAccessTransfer
@@ -27,12 +21,6 @@ class CustomerAccessMapper implements CustomerAccessMapperInterface
         return $contentTypeAccessTransfer->fromArray($customerAccessEntity->toArray(), true);
     }
 
-    /**
-     * @param \Propel\Runtime\Collection\Collection $customerAccessEntities
-     * @param \Generated\Shared\Transfer\CustomerAccessTransfer $customerAccessTransfer
-     *
-     * @return \Generated\Shared\Transfer\CustomerAccessTransfer
-     */
     public function mapEntitiesToCustomerAccessTransfer(
         Collection $customerAccessEntities,
         CustomerAccessTransfer $customerAccessTransfer
@@ -46,12 +34,6 @@ class CustomerAccessMapper implements CustomerAccessMapperInterface
         return $customerAccessTransfer;
     }
 
-    /**
-     * @param \Orm\Zed\CustomerAccess\Persistence\SpyUnauthenticatedCustomerAccess $customerAccessEntity
-     * @param \Generated\Shared\Transfer\CustomerAccessTransfer $customerAccessTransfer
-     *
-     * @return \Generated\Shared\Transfer\CustomerAccessTransfer
-     */
     public function mapEntityToCustomerAccessTransfer(
         SpyUnauthenticatedCustomerAccess $customerAccessEntity,
         CustomerAccessTransfer $customerAccessTransfer

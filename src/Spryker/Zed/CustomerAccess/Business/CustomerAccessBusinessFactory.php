@@ -24,9 +24,6 @@ use Spryker\Zed\Kernel\Business\AbstractBusinessFactory;
  */
 class CustomerAccessBusinessFactory extends AbstractBusinessFactory
 {
-    /**
-     * @return \Spryker\Zed\CustomerAccess\Business\Installer\CustomerAccessInstallerInterface
-     */
     public function createInstaller(): CustomerAccessInstallerInterface
     {
         return new CustomerAccessInstaller(
@@ -36,25 +33,16 @@ class CustomerAccessBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\CustomerAccess\Business\CustomerAccess\CustomerAccessCreatorInterface
-     */
     public function createCustomerAccessCreator(): CustomerAccessCreatorInterface
     {
         return new CustomerAccessCreator($this->getEntityManager());
     }
 
-    /**
-     * @return \Spryker\Zed\CustomerAccess\Business\CustomerAccess\CustomerAccessReaderInterface
-     */
     public function createCustomerAccessReader(): CustomerAccessReaderInterface
     {
         return new CustomerAccessReader($this->getRepository());
     }
 
-    /**
-     * @return \Spryker\Zed\CustomerAccess\Business\CustomerAccess\CustomerAccessUpdaterInterface
-     */
     public function createCustomerAccessUpdater(): CustomerAccessUpdaterInterface
     {
         return new CustomerAccessUpdater($this->getEntityManager());

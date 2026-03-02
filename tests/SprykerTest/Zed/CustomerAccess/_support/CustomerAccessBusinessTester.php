@@ -28,9 +28,6 @@ class CustomerAccessBusinessTester extends Actor
 {
     use _generated\CustomerAccessBusinessTesterActions;
 
-    /**
-     * @return \Spryker\Zed\CustomerAccess\Business\CustomerAccessFacadeInterface
-     */
     public function getFacade(): CustomerAccessFacadeInterface
     {
         return $this->getLocator()->customerAccess()->facade();

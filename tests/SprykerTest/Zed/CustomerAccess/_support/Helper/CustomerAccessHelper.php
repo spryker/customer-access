@@ -18,11 +18,6 @@ class CustomerAccessHelper extends Module
 {
     use LocatorHelperTrait;
 
-    /**
-     * @param array $override
-     *
-     * @return \Generated\Shared\Transfer\CustomerAccessTransfer
-     */
     public function haveCustomerAccess(array $override = []): CustomerAccessTransfer
     {
         $data = [

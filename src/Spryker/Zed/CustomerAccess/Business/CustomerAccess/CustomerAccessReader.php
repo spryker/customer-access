@@ -18,43 +18,26 @@ class CustomerAccessReader implements CustomerAccessReaderInterface
      */
     protected $customerAccessRepository;
 
-    /**
-     * @param \Spryker\Zed\CustomerAccess\Persistence\CustomerAccessRepositoryInterface $customerAccessRepository
-     */
     public function __construct(CustomerAccessRepositoryInterface $customerAccessRepository)
     {
         $this->customerAccessRepository = $customerAccessRepository;
     }
 
-    /**
-     * @param string $contentType
-     *
-     * @return \Generated\Shared\Transfer\ContentTypeAccessTransfer|null
-     */
     public function findCustomerAccessByContentType(string $contentType): ?ContentTypeAccessTransfer
     {
         return $this->customerAccessRepository->findCustomerAccessByContentType($contentType);
     }
 
-    /**
-     * @return \Generated\Shared\Transfer\CustomerAccessTransfer
-     */
     public function getUnrestrictedContentTypes(): CustomerAccessTransfer
     {
         return $this->customerAccessRepository->getUnrestrictedContentTypes();
     }
 
-    /**
-     * @return \Generated\Shared\Transfer\CustomerAccessTransfer
-     */
     public function getAllContentTypes(): CustomerAccessTransfer
     {
         return $this->customerAccessRepository->getAllContentTypes();
     }
 
-    /**
-     * @return \Generated\Shared\Transfer\CustomerAccessTransfer
-     */
     public function getRestrictedContentTypes(): CustomerAccessTransfer
     {
         return $this->customerAccessRepository->getRestrictedContentTypes();

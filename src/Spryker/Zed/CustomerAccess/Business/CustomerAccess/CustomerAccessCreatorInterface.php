@@ -11,11 +11,5 @@ use Generated\Shared\Transfer\CustomerAccessTransfer;
 
 interface CustomerAccessCreatorInterface
 {
-    /**
-     * @param string $contentType
-     * @param bool $isRestricted
-     *
-     * @return \Generated\Shared\Transfer\CustomerAccessTransfer
-     */
     public function createCustomerAccess(string $contentType, bool $isRestricted): CustomerAccessTransfer;
 }

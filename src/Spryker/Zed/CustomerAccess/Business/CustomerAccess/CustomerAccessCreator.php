@@ -17,20 +17,11 @@ class CustomerAccessCreator implements CustomerAccessCreatorInterface
      */
     protected $customerAccessEntityManager;
 
-    /**
-     * @param \Spryker\Zed\CustomerAccess\Persistence\CustomerAccessEntityManagerInterface $customerAccessEntityManager
-     */
     public function __construct(CustomerAccessEntityManagerInterface $customerAccessEntityManager)
     {
         $this->customerAccessEntityManager = $customerAccessEntityManager;
     }
 
-    /**
-     * @param string $contentType
-     * @param bool $isRestricted
-     *
-     * @return \Generated\Shared\Transfer\CustomerAccessTransfer
-     */
     public function createCustomerAccess(string $contentType, bool $isRestricted): CustomerAccessTransfer
     {
         return $this->customerAccessEntityManager->createCustomerAccess($contentType, $isRestricted);

@@ -18,12 +18,6 @@ use Spryker\Zed\Kernel\Persistence\AbstractEntityManager;
  */
 class CustomerAccessEntityManager extends AbstractEntityManager implements CustomerAccessEntityManagerInterface
 {
-    /**
-     * @param string $contentType
-     * @param bool $isRestricted
-     *
-     * @return \Generated\Shared\Transfer\CustomerAccessTransfer
-     */
     public function createCustomerAccess(string $contentType, bool $isRestricted): CustomerAccessTransfer
     {
         $customerAccessEntity = $this->getFactory()->createCustomerAccessQuery()
@@ -38,9 +32,6 @@ class CustomerAccessEntityManager extends AbstractEntityManager implements Custo
             ->mapEntityToCustomerAccessTransfer($customerAccessEntity, new CustomerAccessTransfer());
     }
 
-    /**
-     * @return void
-     */
     public function setAllContentTypesToAccessible(): void
     {
         $customerAccessEntities = $this->getFactory()->createCustomerAccessQuery()->find();
@@ -51,11 +42,6 @@ class CustomerAccessEntityManager extends AbstractEntityManager implements Custo
         }
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CustomerAccessTransfer $customerAccessTransfer
-     *
-     * @return \Generated\Shared\Transfer\CustomerAccessTransfer
-     */
     public function setContentTypesToInaccessible(CustomerAccessTransfer $customerAccessTransfer): CustomerAccessTransfer
     {
         $updatedContentTypeAccessCollection = new ArrayObject();
@@ -75,11 +61,6 @@ class CustomerAccessEntityManager extends AbstractEntityManager implements Custo
         return $customerAccessTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ContentTypeAccessTransfer $contentTypeAccessTransfer
-     *
-     * @return \Orm\Zed\CustomerAccess\Persistence\SpyUnauthenticatedCustomerAccess|null
-     */
     protected function getCustomerAccessEntityByContentType(ContentTypeAccessTransfer $contentTypeAccessTransfer): ?SpyUnauthenticatedCustomerAccess
     {
         return $this->getFactory()
@@ -88,11 +69,6 @@ class CustomerAccessEntityManager extends AbstractEntityManager implements Custo
             ->findOne();
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ContentTypeAccessTransfer $contentTypeAccessTransfer
-     *
-     * @return \Orm\Zed\CustomerAccess\Persistence\SpyUnauthenticatedCustomerAccess
-     */
     protected function createCustomerAccessEntity(ContentTypeAccessTransfer $contentTypeAccessTransfer): SpyUnauthenticatedCustomerAccess
     {
         $spyCustomerAccess = new SpyUnauthenticatedCustomerAccess();

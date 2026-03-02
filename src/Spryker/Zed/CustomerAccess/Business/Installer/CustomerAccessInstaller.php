@@ -33,11 +33,6 @@ class CustomerAccessInstaller implements CustomerAccessInstallerInterface
      */
     protected $customerAccessReader;
 
-    /**
-     * @param \Spryker\Zed\CustomerAccess\CustomerAccessConfig $customerAccessConfig
-     * @param \Spryker\Zed\CustomerAccess\Business\CustomerAccess\CustomerAccessCreatorInterface $customerAccessCreator
-     * @param \Spryker\Zed\CustomerAccess\Business\CustomerAccess\CustomerAccessReaderInterface $customerAccessReader
-     */
     public function __construct(
         CustomerAccessConfig $customerAccessConfig,
         CustomerAccessCreatorInterface $customerAccessCreator,
@@ -48,9 +43,6 @@ class CustomerAccessInstaller implements CustomerAccessInstallerInterface
         $this->customerAccessConfig = $customerAccessConfig;
     }
 
-    /**
-     * @return void
-     */
     public function install(): void
     {
         $contentTypeAccess = $this->customerAccessConfig->getContentTypeAccess();

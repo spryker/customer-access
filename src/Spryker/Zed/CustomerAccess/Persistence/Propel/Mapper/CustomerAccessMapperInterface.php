@@ -14,34 +14,16 @@ use Propel\Runtime\Collection\Collection;
 
 interface CustomerAccessMapperInterface
 {
-    /**
-     * @param \Orm\Zed\CustomerAccess\Persistence\SpyUnauthenticatedCustomerAccess $customerAccessEntity
-     * @param \Generated\Shared\Transfer\ContentTypeAccessTransfer $contentTypeAccessTransfer
-     *
-     * @return \Generated\Shared\Transfer\ContentTypeAccessTransfer
-     */
     public function mapCustomerAccessEntityToContentTypeAccessTransfer(
         SpyUnauthenticatedCustomerAccess $customerAccessEntity,
         ContentTypeAccessTransfer $contentTypeAccessTransfer
     ): ContentTypeAccessTransfer;
 
-    /**
-     * @param \Propel\Runtime\Collection\Collection $customerAccessEntities
-     * @param \Generated\Shared\Transfer\CustomerAccessTransfer $customerAccessTransfer
-     *
-     * @return \Generated\Shared\Transfer\CustomerAccessTransfer
-     */
     public function mapEntitiesToCustomerAccessTransfer(
         Collection $customerAccessEntities,
         CustomerAccessTransfer $customerAccessTransfer
     ): CustomerAccessTransfer;
 
-    /**
-     * @param \Orm\Zed\CustomerAccess\Persistence\SpyUnauthenticatedCustomerAccess $customerAccessEntity
-     * @param \Generated\Shared\Transfer\CustomerAccessTransfer $customerAccessTransfer
-     *
-     * @return \Generated\Shared\Transfer\CustomerAccessTransfer
-     */
     public function mapEntityToCustomerAccessTransfer(
         SpyUnauthenticatedCustomerAccess $customerAccessEntity,
         CustomerAccessTransfer $customerAccessTransfer

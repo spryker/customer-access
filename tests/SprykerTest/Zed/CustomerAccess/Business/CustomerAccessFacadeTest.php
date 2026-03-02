@@ -32,9 +32,6 @@ class CustomerAccessFacadeTest extends Unit
      */
     protected $tester;
 
-    /**
-     * @return void
-     */
     public function testGetUnrestrictedContentTypesReturnsCorrectCustomerAccessObject(): void
     {
         // Arrange
@@ -51,9 +48,6 @@ class CustomerAccessFacadeTest extends Unit
         }
     }
 
-    /**
-     * @return void
-     */
     public function testGetRestrictedContentTypesReturnsCorrectCustomerAccessObject(): void
     {
         // Arrange
@@ -70,9 +64,6 @@ class CustomerAccessFacadeTest extends Unit
         }
     }
 
-    /**
-     * @return void
-     */
     public function testInstallNotFails(): void
     {
         // Arrange
@@ -104,9 +95,6 @@ class CustomerAccessFacadeTest extends Unit
         $this->assertEquals($mockedContentTypes, $installedContentTypes);
     }
 
-    /**
-     * @return void
-     */
     public function testGetAllContentTypesReturnsAllTableRows(): void
     {
         // Arrange
@@ -138,9 +126,6 @@ class CustomerAccessFacadeTest extends Unit
         }
     }
 
-    /**
-     * @return void
-     */
     public function testUpdateUnauthenticatedCustomerAccessUpdatesCorrectContentType(): void
     {
         // Arrange
@@ -165,12 +150,6 @@ class CustomerAccessFacadeTest extends Unit
         }
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CustomerAccessTransfer $customerAccessTransfer
-     * @param \Generated\Shared\Transfer\ContentTypeAccessTransfer $contentTypeAccessTransfer
-     *
-     * @return void
-     */
     protected function assertCustomerAccessTransferContainsContentTypeAccess(
         CustomerAccessTransfer $customerAccessTransfer,
         ContentTypeAccessTransfer $contentTypeAccessTransfer
@@ -182,17 +161,11 @@ class CustomerAccessFacadeTest extends Unit
         }
     }
 
-    /**
-     * @return \Spryker\Zed\CustomerAccess\Business\CustomerAccessFacade
-     */
     protected function createCustomerAccessFacade(): CustomerAccessFacade
     {
         return new CustomerAccessFacade();
     }
 
-    /**
-     * @return \Spryker\Zed\CustomerAccess\Business\CustomerAccessBusinessFactory
-     */
     protected function createCustomerAccessBusinessFactory(): CustomerAccessBusinessFactory
     {
         return new CustomerAccessBusinessFactory();
